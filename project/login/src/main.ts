@@ -36,5 +36,5 @@ form.addEventListener('submit', async (event) => {
   }
 
   const headUrl = import.meta.env.VITE_HEAD_PUBLIC_URL || 'http://127.0.0.1:4000';
-  window.location.href = window.location.port === '4010' ? headUrl + (json.redirectTo || '/') : (json.redirectTo || '/');
+  window.location.href = window.location.port === '4010' ? `${headUrl}/admin` : (json.redirectTo || '/admin');
 });
