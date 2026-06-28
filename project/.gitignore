@@ -1,0 +1,11 @@
+node_modules
+dist
+.env
+*.log
+data/stores/*.json
+data/notes-assets/*
+data/file-assets/*
+!data/.gitkeep
+!data/stores/.gitkeep
+!data/notes-assets/.gitkeep
+!data/file-assets/.gitkeep

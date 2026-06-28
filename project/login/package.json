@@ -1,0 +1,17 @@
+{
+  "name": "beaver-web-login",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 4010",
+    "build": "vite build",
+    "start": "vite preview --host 127.0.0.1 --port 4010"
+  },
+  "dependencies": {
+    "vite": "^5.4.11"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}

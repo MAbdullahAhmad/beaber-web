@@ -1,0 +1,2 @@
+import { createProxyMiddleware } from 'http-proxy-middleware';
+export function proxyTo(target: string, rewrite?: (path: string) => string) { return createProxyMiddleware({ target, changeOrigin:true, ws:true, pathRewrite: rewrite ? (path) => rewrite(path) : undefined, on:{ error(err, _req, res) { const r = res as any; if (!r.headersSent) r.writeHead(502, { 'Content-Type':'application/json' }); r.end(JSON.stringify({ ok:false, error:'Upstream unavailable', detail:err.message })); } } }); }

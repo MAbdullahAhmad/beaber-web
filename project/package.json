@@ -1,0 +1,17 @@
+{
+  "name": "beaver-web-suite",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "install:all": "npm --prefix rev-proxy install && npm --prefix login install && npm --prefix frontend install && npm --prefix api install",
+    "dev": "concurrently -n api,login,frontend,proxy \"npm --prefix api run dev\" \"npm --prefix login run dev\" \"npm --prefix frontend run dev\" \"npm --prefix rev-proxy run dev\"",
+    "build": "npm --prefix api run build && npm --prefix login run build && npm --prefix frontend run build && npm --prefix rev-proxy run build",
+    "start": "concurrently -n api,login,frontend,proxy \"npm --prefix api start\" \"npm --prefix login start\" \"npm --prefix frontend start\" \"npm --prefix rev-proxy start\"",
+    "test": "npm --prefix api test && npm --prefix rev-proxy test",
+    "check": "npm --prefix api run typecheck && npm --prefix rev-proxy run typecheck && npm --prefix login run build && npm --prefix frontend run build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
