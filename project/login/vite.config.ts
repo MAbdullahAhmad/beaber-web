@@ -9,6 +9,7 @@ export default defineConfig(({ mode }) => {
       host: env.LOGIN_HOST || '127.0.0.1',
       port: Number(env.LOGIN_PORT || 4010),
       strictPort: true,
+      hmr: false,
       proxy: {
         // Allows direct dev testing at http://127.0.0.1:4010/login/.
         // POST /login from the login UI is forwarded to the rev-proxy login endpoint.

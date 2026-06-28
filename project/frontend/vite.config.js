@@ -5,7 +5,8 @@ export default defineConfig(({ mode }) => {
   return {
     base: '',
     plugins: [vue()],
-    server: { host: env.BEAVER_FRONTEND_HOST || '127.0.0.1', port: Number(env.BEAVER_FRONTEND_PORT || 4020), strictPort: true },
+    server: { host: env.BEAVER_FRONTEND_HOST || '127.0.0.1', port: Number(env.BEAVER_FRONTEND_PORT || 4020), strictPort: true,
+      hmr: false },
     preview: { host: env.BEAVER_FRONTEND_HOST || '127.0.0.1', port: Number(env.BEAVER_FRONTEND_PORT || 4020), strictPort: true }
   };
 });
